@@ -7,6 +7,6 @@ RUN apt-get -qqy update && \
 ADD entrypoint.sh /docker/entrypoint.sh
 RUN chmod +x /docker/entrypoint.sh
 
-EXPOSE 8123
+EXPOSE 1080 8123
 
 ENTRYPOINT ["/docker/entrypoint.sh"]
