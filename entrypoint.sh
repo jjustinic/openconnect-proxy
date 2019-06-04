@@ -10,4 +10,4 @@ if [[ -n "${OPENCONNECT_PUSH:-}" ]]; then
     echo "${OPENCONNECT_PUSH}" >> "${OPENCONNECT_PASSWORD_FILE}"
 fi
 
-cat "${OPENCONNECT_PASSWORD_FILE}" | openconnect --script-tun --script "ocproxy -D 1080" --authgroup "${OPENCONNECT_GROUP}" -u "${OPENCONNECT_USER}" --passwd-on-stdin "${OPENCONNECT_HOST}"
+cat "${OPENCONNECT_PASSWORD_FILE}" | openconnect --script-tun --script "ocproxy -g -D 1080" --authgroup "${OPENCONNECT_GROUP}" -u "${OPENCONNECT_USER}" --passwd-on-stdin "${OPENCONNECT_HOST}"
